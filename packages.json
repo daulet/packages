@@ -1,0 +1,44 @@
+{
+  "origin": "Daulet Packages",
+  "label": "Daulet Packages",
+  "suite": "stable",
+  "codename": "stable",
+  "description": "APT repository for Daulet command line tools",
+  "architectures": ["amd64", "arm64"],
+  "component": "main",
+  "packages": [
+    {
+      "name": "codex",
+      "repo": "daulet/codex",
+      "tag": "v0.124.0",
+      "version": "0.124.0",
+      "assets": {
+        "amd64": {
+          "name": "codex-amd64.deb",
+          "sha256": "b1aa68ee7215df9287ed206281b82ae66f860c562c78a158aa40046461a4ce98"
+        },
+        "arm64": {
+          "name": "codex-arm64.deb",
+          "sha256": "a14b5d6bd58ca3be500ee3b3332890f64e3f3494ed524fd8274455ce2417588c"
+        }
+      }
+    },
+    {
+      "name": "mot",
+      "repo": "daulet/mot",
+      "tag": "v0.3.2",
+      "version": "0.3.2",
+      "assets": {
+        "amd64": {
+          "name": "mot_0.3.2_amd64.deb",
+          "sha256": "cf9bb0c443dfde2f353f28860b5a71ce0ca5d7fa51fd645d3faf478d9d9bd113"
+        },
+        "arm64": {
+          "name": "mot_0.3.2_arm64.deb",
+          "sha256": "c3cd86583ea19c165d2357ea096ce5ca14e0c9d3c26425613ddc3414d324fb8d"
+        }
+      }
+    }
+  ]
+}
+

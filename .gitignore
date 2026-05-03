@@ -1,0 +1,7 @@
+.cache/
+site/
+__pycache__/
+*.pyc
+
+# Local secret export
+APT_SIGNING_KEY.secret.asc

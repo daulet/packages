@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build unsigned APT repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install decompression tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends zstd
+
+      - name: Build repository
+        run: python3 scripts/build-apt-repo.py --output site
+
+      - name: Check repository layout
+        run: |
+          test -f site/dists/stable/Release
+          test -f site/dists/stable/main/binary-amd64/Packages.gz
+          test -f site/dists/stable/main/binary-arm64/Packages.gz
+          test -f site/pool/main/c/codex/codex-amd64.deb
+          test -f site/pool/main/c/codex/codex-arm64.deb
+          test -f site/pool/main/m/mot/mot_0.3.2_amd64.deb
+          test -f site/pool/main/m/mot/mot_0.3.2_arm64.deb
