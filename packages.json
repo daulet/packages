@@ -4,7 +4,10 @@
   "suite": "stable",
   "codename": "stable",
   "description": "APT repository for Daulet command line tools",
-  "architectures": ["amd64", "arm64"],
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
   "component": "main",
   "packages": [
     {
@@ -41,4 +44,3 @@
     }
   ]
 }
-

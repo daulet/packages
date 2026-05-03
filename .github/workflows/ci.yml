@@ -18,6 +18,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends zstd
 
+      - name: Check scripts
+        run: |
+          python3 -m py_compile scripts/build-apt-repo.py scripts/update-package.py
+          bash -n scripts/sign-apt-repo.sh
+          python3 -m json.tool packages.json >/dev/null
+
       - name: Build repository
         run: python3 scripts/build-apt-repo.py --output site
 

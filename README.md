@@ -51,12 +51,31 @@ workflows publish `.deb` assets for both architectures.
 3. Merge to `main`.
 4. `Deploy APT Repository` builds, signs, and publishes the repository to Pages.
 
+Source package release workflows publish public `.deb` assets to release tags in
+this repository, then update `packages.json` to point at those assets. That keeps
+private source repositories private while making the installable binaries public.
+
+The manifest update step is:
+
+```sh
+python3 scripts/update-package.py \
+  --name mot \
+  --repo daulet/packages \
+  --tag mot-v0.3.2 \
+  --version 0.3.2 \
+  --asset amd64:mot_0.3.2_amd64.deb:SHA256 \
+  --asset arm64:mot_0.3.2_arm64.deb:SHA256
+```
+
 Required repository setup:
 
 - Create `daulet/packages`.
 - Enable GitHub Pages with `GitHub Actions` as the source.
 - Add `APT_SIGNING_KEY` as a repository secret.
 - Optionally add `APT_SIGNING_KEY_ID` and `APT_SIGNING_KEY_PASSPHRASE`.
+- Add a `PACKAGES_REPO_TOKEN` secret to each source package repo that should
+  update this repository automatically. The token only needs contents write
+  access to `daulet/packages`.
 
 Generate a signing key locally with:
 
