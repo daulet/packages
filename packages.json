@@ -13,16 +13,16 @@
     {
       "name": "codex",
       "repo": "daulet/packages",
-      "tag": "codex-codex-v0.130.0",
-      "version": "0.130.0",
+      "tag": "codex-rust-v0.130.1",
+      "version": "0.130.1",
       "assets": {
         "amd64": {
           "name": "codex-amd64.deb",
-          "sha256": "a84f83e794a1e5143a5de461d60762b7f6fb00a27e389a8dfe67a7afb8de896b"
+          "sha256": "b0709e18c309c40c18f57d186b14d34dc910f1438419c963d9478e6b3089d10a"
         },
         "arm64": {
           "name": "codex-arm64.deb",
-          "sha256": "c55f7a7c1c4d2177575fbcae61ad639a458aad4bfe0694f4550a20652dc0a912"
+          "sha256": "ac6ae16461e7a5450ab4af96ce438e76eaddf65a8e2ce4d9c2793dc80fc2f074"
         }
       }
     },
